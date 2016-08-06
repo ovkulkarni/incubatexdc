@@ -1,1 +1,50 @@
-#csshere
+/*
+ * colors:
+ *  blue: #0e79b2
+ *  darker blue: #26547c
+ * 	black: #000000
+ *  white: #eff2ef
+ *	orange: #f39237
+ */
+
+/* --- misc styles --- */
+* {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #26547c;
+	background-image: url("../texture.png");
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+	color: inherit;
+}
+
+#main-content {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.button-primary {
+    background-color: #0a4883;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.clear-text-effect {
+    text-transform: none;
+	color: inherit;
+}
+
+/* --- end misc styles --- */
