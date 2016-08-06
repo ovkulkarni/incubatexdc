@@ -1,15 +1,28 @@
-from flask import Flask, render_template, make_response
 from database import database
+from flask import Flask, render_template, flash, redirect, make_response, request, session
 from flask_wtf.csrf import CsrfProtect
+import logging
 import subprocess
 import traceback
+import os
+
+
+log_formatter = logging.Formatter('''
+Message type:       %(levelname)s
+Location:           %(pathname)s:%(lineno)d
+Module:             %(module)s
+Function:           %(funcName)s
+Time:               %(asctime)s
+Message:
+%(message)s
+''')
 
 csrf = CsrfProtect()
 
 def create_app(environment):
     app = Flask(__name__)
     app.config.from_pyfile("config/{}.py".format(environment))
-    
+
     database.init(app.config["DB_PATH"])
 
     csrf.init_app(app)
@@ -35,12 +48,11 @@ def create_app(environment):
     def csrf_error(reason):
         return make_response(render_template('csrf_error.html', reason=reason), 400)
 
-	@app.route('/')
-	def index():
-		return "hi"
-		return render_template("index.html")
+    @app.route("/")
+    def home_page():
+        return render_template("index.html")
 
     return app
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     create_app("dev").run(port=5000, debug=True)
