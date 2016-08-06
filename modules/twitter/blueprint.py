@@ -3,9 +3,9 @@ from twitter_utils import analyze_tweets, get_tweets
 
 twitter = Blueprint("twitter", __name__, template_folder="templates", url_prefix="/twitter")
 
-@twitter.route("/results/")
-def show_results():
-	tweets = get_tweets()
+@twitter.route("/results/<user>/")
+def show_results(user):
+	tweets = get_tweets(user)
 	analysis = analyze_tweets(tweets)
 	return str(analysis)
 

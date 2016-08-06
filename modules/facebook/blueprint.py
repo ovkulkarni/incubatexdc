@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, current_app, flash, url_for, reque
 from facebook_utils import get_posts, analyze_posts
 from requests import get
 from urllib import quote
+import facebook
 
 fb = Blueprint("fb", __name__, template_folder="templates", url_prefix="/facebook")
 
@@ -24,13 +25,16 @@ def process_code():
 			session["token"] = args["access_token"]
 			return(redirect(url_for('.process_code')))
 	else:
-		return redirect(url_for('.show_results'))
+		return redirect(url_for('.show_results', user="me"))
 
 @fb.route("/results/<user>/")
 def show_results(user):
-	posts = get_posts(user)
-	analysis = analyze_posts(posts)
-	return str(analysis)
+	try:
+		posts = get_posts(user)
+		analysis = analyze_posts(posts)
+		return str(analysis)
+	except facebook.GraphAPIError:
+		return redirect(url_for('.process_code'))
 
 @fb.route("/parse/", methods=["POST"])
 def parse_url():
