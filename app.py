@@ -6,13 +6,13 @@ import traceback
 csrf = CsrfProtect()
 
 def create_app(environment):
-	app = Flask(__name__)
-	app.config.from_pyfile("config/{}.py".format(environment))
-	database.init(app.config["DB_PATH"])
+    app = Flask(__name__)
+    app.config.from_pyfile("config/{}.py".format(environment))
+    database.init(app.config["DB_PATH"])
 
-	csrf.init_app(app)
+    csrf.init_app(app)
 
-	@app.context_processor
+    @app.context_processor
     def inject_config():
         if app.config["DISPLAY_DEBUG_INFO"]:
             version = subprocess.check_output(["git", "describe", "--always"]).decode().strip()
@@ -36,4 +36,4 @@ def create_app(environment):
     return app
 
 if __name__ == "__main__":
-	create_app("dev").run(port=5000, debug=True)
+    create_app("dev").run(port=5000, debug=True)
