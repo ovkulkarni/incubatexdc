@@ -34,6 +34,11 @@ def create_app(environment):
     def csrf_error(reason):
         return make_response(render_template('csrf_error.html', reason=reason), 400)
 
+	@app.route('/')
+	def index():
+		return render_template("index.html")
+
+	
     return app
 
 if __name__ == "__main__":
