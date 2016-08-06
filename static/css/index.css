@@ -1,4 +1,27 @@
-#temp
+/* --- content styles --- */
+#main-content {
 
+	max-width: 1000px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
+.button-primary {
+    background-color: #0a4883;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.clear-text-effect {
+    text-transform: none;
+	color: inherit;
+}
+/* --- end content styles --- */

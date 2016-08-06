@@ -24,13 +24,11 @@
         {% endif %}
     </head>
     <body>
-        <div id="header">
-			<nav>
-				<div class="nav-wrapper headfoot">
-					<a href="#" class="brand-logo center">Web Makeover</a>
-				</div>
-			</nav>
-        </div>
+		<nav>
+			<div class="nav-wrapper headfoot">
+				<a href="#" class="brand-logo center">Web Makeover</a>
+			</div>
+		</nav>
 
         <div class="container">
 			<!--
@@ -50,11 +48,7 @@
             {% endblock %}
         </div>
 
-
-
-		
-
-		<!--
+		<!-- Non-working footer 
         <footer class="page-footer headfoot">
 			<div class="container">
 				<div class="row">
@@ -74,24 +68,6 @@
 			</div>
 		</footer>
 		-->
-
-		<!--
-        <script type="text/javascript">
-            $(function() {
-                if ($(document).width() <=  1200)
-                    $(".header-nav").toggle();
-                $("#toggleButton").click(function() {
-                    $(".header-nav").slideToggle("slow");
-                });
-            });
-            $(window).resize(function() {
-                if (window.innerWidth >  1200)
-                    $(".header-nav").show();
-                else
-                    $(".header-nav").hide();
-            });
-        </script>
-		-->		
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
