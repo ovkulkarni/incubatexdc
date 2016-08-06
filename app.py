@@ -1,4 +1,5 @@
 from flask import Flask, render_template, make_response
+from database import database
 from flask_wtf.csrf import CsrfProtect
 import subprocess
 import traceback

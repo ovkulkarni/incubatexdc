@@ -1,0 +1,4 @@
+Flask==0.11.1
+flask_script==2.0.5
+flask_wtf==0.12
+peewee==2.8.1
