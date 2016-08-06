@@ -60,7 +60,10 @@
                 <a href="mailto:info@unifieddemocracy.org" target="_blank"><i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;info@<wbr>unified<wbr>democracy<wbr>.org</a>
             </div>
         </div>
-        
+        {% if global_config["DISPLAY_DEBUG_INFO"] %}
+        	<p>platform version {{ version }}</p>
+        {% endif %}
+
 		<!--
         <script type="text/javascript">
             $(function() {
@@ -78,7 +81,7 @@
             });
         </script>
 		-->		
-
+		
         {% block scripts %}
         {% endblock %}
     </body>
