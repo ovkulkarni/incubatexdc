@@ -51,3 +51,8 @@ a {
 }
 
 /* --- end misc styles --- */
+
+.headerMargins{
+	margin-left: 10px
+	margin-right: 10px
+}
