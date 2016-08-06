@@ -2,27 +2,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Facebook -->
-<div class="row">
-	<form class="col s12" method="POST">
-	{#{{ form.csrf_token() }}#}
-		<div class="row">
-			<div class="input-field col s6">
+<div id="main-content">
+	<!-- Facebook -->
+	<div class="row">
+		<form class="col s12" method="POST">
+		{#{{ form.csrf_token() }}#}
+			<div class="row">
+				<div class="input-field col s6">
+				</div>
+				<div class="input-field col s6">
+					<input id="last_name" type="text" class="validate">
+					<label for="last_name">Page URL</label>
+				</div>
 			</div>
-			<div class="input-field col s6">
-				<input id="last_name" type="text" class="validate">
-				<label for="last_name">Page URL</label>
-			</div>
-		</div>
-	</form>
-</div>
-<!-- end Facebook -->
+		</form>
+	</div>
+	<!-- end Facebook -->
 
-<div class="container">
-	<p class="center">
-		Applying for a school, internship or job? Worried about your past actions on social media? Web makeover is an free and easy to use tool that scans all your
-		social media platforms, and warns about any content that may impede your application. All you need to do is provide web makeover with links to your posts,
-		and we will suggest content that you may want to remove from your account.
-	</p>
+	<div class="container">
+		<p class="center">
+			Applying for a school, internship or job? Worried about your past actions on social media? Web makeover is an free and easy to use tool that scans all your
+			social media platforms, and warns about any content that may impede your application. All you need to do is provide web makeover with links to your posts,
+			and we will suggest content that you may want to remove from your account.
+		</p>
+	</div>
 </div>
 {% endblock %}
