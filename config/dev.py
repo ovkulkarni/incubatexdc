@@ -1,6 +1,6 @@
 import os
 
-APP_NAME = "IncubateX DC Project"
+APP_NAME = "Web Makeover"
 SECRET_KEY = "key"
 DB_PATH = "database.db"
 ENVIRONMENT = "dev"
