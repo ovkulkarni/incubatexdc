@@ -1,4 +1,4 @@
-
+{% set extra_css = extra_css | default(False) %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +8,10 @@
         <link href="/static/css/base.css" rel='stylesheet' type='text/css' />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
 
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel='stylesheet' />
 		
 
-        <link href="/static/favicon.ico" rel='shortcut icon' />
+        <link href="/static/favicon.ico" rel='shortcut' />
 
 		{% if extra_css %}
         	{% if extra_css is string %}
@@ -22,11 +22,6 @@
         		{% endfor %}
         	{% endif %}
         {% endif %}
-
-        <style>
-        	{% block inline_css %}
-        	{% endblock %}
-        </style>
     </head>
     <body>
         <div id="header">
