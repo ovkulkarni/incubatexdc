@@ -35,6 +35,7 @@ def show_results(user):
 @fb.route("/parse/", methods=["POST"])
 def parse_url():
 	url = request.form.get("fb_url", "")
+	if url.endswith("/"): url = url[:-1]
 	username = url.split("/")[-1].split("?")[0]
 	return redirect(url_for('.show_results', user=username))
 
