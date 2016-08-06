@@ -26,11 +26,17 @@ def process_code():
 	else:
 		return redirect(url_for('.show_results'))
 
-@fb.route("/results/")
-def show_results():
-	posts = get_posts("TJCaptureTheFlag")
+@fb.route("/results/<user>/")
+def show_results(user):
+	posts = get_posts(user)
 	analysis = analyze_posts(posts)
 	return str(analysis)
+
+@fb.route("/parse/", methods=["POST"])
+def parse_url():
+	url = request.form.get("fb_url", "")
+	username = url.split("/")[-1].split("?")[0]
+	return redirect(url_for('.show_results', user=username))
 
 		
 
