@@ -1,4 +1,8 @@
 /* --- content styles --- */
+h4 {
+	text-align: center;
+}
+
 #main-content {
 	max-width: 1000px;
     margin-top: 80px;
