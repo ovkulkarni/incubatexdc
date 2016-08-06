@@ -5,14 +5,14 @@
 <div id="main-content">
 	<!-- Facebook -->
 	<div class="row">
-		<form class="col s12" method="POST">
+		<form class="col s12" method="POST" action="">
 		{#{{ form.csrf_token() }}#}
 			<div class="row">
 				<div class="input-field col s6">
 				</div>
 				<div class="input-field col s6">
-					<input id="last_name" type="text" class="validate">
-					<label for="last_name">Page URL</label>
+					<input class="validate" type="text" id="fb_url" name="fb_url">
+					<label for="fb_url">Facebook Page URL</label>
 				</div>
 			</div>
 		</form>
