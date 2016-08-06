@@ -28,8 +28,18 @@ a {
     text-decoration: none;
 }
 
+hr {
+	margin-top: 60px;
+	margin-bottom: 80px;
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #26547c;
+}
 /* --- end misc styles --- */
 
+/* --- header/footer styles --- */
 .headfoot {
 	background-color: #0e79b2 !important;
 }
+/* --- end header/footer styles --- */
