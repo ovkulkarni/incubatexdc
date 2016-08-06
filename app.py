@@ -27,14 +27,6 @@ def create_app(environment):
 
     csrf.init_app(app)
 
-    @app.context_processor
-    def inject_config():
-        if app.config["DISPLAY_DEBUG_INFO"]:
-            version = subprocess.check_output(["git", "describe", "--always"]).decode().strip()
-        else:
-            version = ""
-        return dict(global_config=app.config, version=version)
-
     @app.errorhandler(404)
     def page_not_found(exc):
         return make_response(render_template("not_found.html"), 404)
