@@ -10,7 +10,17 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
         <link href="/static/favicon.ico" rel='shortcut icon' />
-		
+
+		{% if extra_css %}
+        	{% if extra_css is string %}
+        		<link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
+        	{% elif extra_css is iterable %}
+        		{% for file in extra_css %}
+        			<link href="/static/css/{{ file }}.css" rel='stylesheet' type='text/css' />
+        		{% endfor %}
+        	{% endif %}
+        {% endif %}
+
 		<!--
         <link href="/static/css/pure.min.css" rel='stylesheet' type='text/css' />
         <link href="/static/css/grids-responsive.min.css" rel='stylesheet' type='text/css' />
