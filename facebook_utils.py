@@ -13,13 +13,8 @@ def get_posts(user="BillGates"):
     posts = graph.get_connections(profile['id'], 'feed')
 
     posts_list = []
-    while True:
-        try:
-            for post in posts['data']:
-                posts_list.append(post)
-            posts = get(posts['paging']['next']).json()
-        except KeyError:
-            break
+    for post in posts['data']:
+        posts_list.append(post)
 
     return posts_list
 
