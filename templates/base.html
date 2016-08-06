@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +9,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		
 
         <link href="/static/favicon.ico" rel='shortcut icon' />
 
@@ -20,14 +22,6 @@
         		{% endfor %}
         	{% endif %}
         {% endif %}
-
-		<!--
-        <link href="/static/css/pure.min.css" rel='stylesheet' type='text/css' />
-        <link href="/static/css/grids-responsive.min.css" rel='stylesheet' type='text/css' />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel='stylesheet' type='text/css' />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel='stylesheet' type='text/css' />
-        <script src="/static/jquery.min.js"></script>
-		-->
 
         <style>
         	{% block inline_css %}
@@ -43,7 +37,7 @@
 			</nav>
         </div>
 
-        <div id="content">
+        <div class="container">
 			<!--
             <div id="flash-container">
                 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -62,6 +56,7 @@
         </div>
 
         <footer class="page-footer headfoot">
+<<<<<<< 488fa9a85d25596e9b5f4d1deba804d359e95447
 			<div class="container">
 				<p>
 					IDK WHAT TO PUT HERE PLS NOOOO
@@ -78,12 +73,23 @@
 				</div>
 				<div class="pure-u-xl-1-4 pure-u-1-2 footer-button text-normal footbox">
 					<a href="mailto:info@unifieddemocracy.org" target="_blank"><i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;info@<wbr>unified<wbr>democracy<wbr>.org</a>
+=======
+			<div class="headfoot">
+				<div class="col s3">
+					<a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-lg"></i>&nbsp;&nbsp;Follow on Google+</a>
+				</div>
+				<div class="col s3">
+					<a href="tel:1-571-354-0586" target="_blank"><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;(571) 354 0586</a>
+				</div>
+				<div class="col s3">
+					<a href="https://www.facebook.com/profile.php?id=100013025233089"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Follow on Facebook</a>
+				</div>
+				<div class="col s3">
+					<a href="mailto:temp@webmakeover.com" target="_blank"><i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;temp@<wbr>web<wbr>makeover<wbr>.com</a>
+>>>>>>> sticky footer
 				</div>
 			</div>
 		</footer>
-        {% if global_config["DISPLAY_DEBUG_INFO"] %}
-        	<p>platform version {{ version }}</p>
-        {% endif %}
 
 		<!--
         <script type="text/javascript">
@@ -102,7 +108,9 @@
             });
         </script>
 		-->		
-		
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
         {% block scripts %}
         {% endblock %}
     </body>
