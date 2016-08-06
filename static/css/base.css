@@ -26,7 +26,6 @@ main {
 	
 a {
     text-decoration: none;
-	color: inherit;
 }
 
 #main-content {
@@ -60,5 +59,4 @@ a {
 
 .headfoot {
 	background-color: #0e79b2 !important;
-	color: white;
 }
