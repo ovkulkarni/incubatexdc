@@ -9,6 +9,7 @@ csrf = CsrfProtect()
 def create_app(environment):
     app = Flask(__name__)
     app.config.from_pyfile("config/{}.py".format(environment))
+    
     database.init(app.config["DB_PATH"])
 
     csrf.init_app(app)
