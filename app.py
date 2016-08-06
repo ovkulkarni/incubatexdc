@@ -25,6 +25,10 @@ def create_app(environment):
 
     database.init(app.config["DB_PATH"])
 
+    from modules.facebook.blueprint import fb
+
+    app.register_blueprint(fb)
+
     csrf.init_app(app)
 
     @app.context_processor
@@ -50,6 +54,7 @@ def create_app(environment):
 
     @app.route("/")
     def home_page():
+        print(str(session))
         return render_template("index.html")
 
     return app
