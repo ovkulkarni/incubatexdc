@@ -26,8 +26,10 @@ def create_app(environment):
     database.init(app.config["DB_PATH"])
 
     from modules.facebook.blueprint import fb
+    from modules.twitter.blueprint import twitter
 
     app.register_blueprint(fb)
+    app.register_blueprint(twitter)
 
     csrf.init_app(app)
 
@@ -54,7 +56,6 @@ def create_app(environment):
 
     @app.route("/")
     def home_page():
-        print(str(session))
         return render_template("index.html")
 
     return app
