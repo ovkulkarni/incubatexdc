@@ -54,4 +54,17 @@ a {
 
 .headfoot {
 	background-color: #0e79b2 !important;
+	color: white;
+}
+
+.footbox {
+	float: left;
+	width: 500px;
+	height: 200px;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	padding: 5px;
+	border: 2px white;
 }
