@@ -20,7 +20,6 @@ pipreqs==0.4.4
 requests==2.10.0
 requests-oauthlib==0.6.2
 six==1.10.0
-textblob==0.11.1
 tweepy==3.5.0
 Werkzeug==0.11.10
 wget==3.2

@@ -1,7 +1,5 @@
 from flask import Flask, render_template, flash, redirect, make_response, request, session
-from flask_cache import Cache
 from flask_wtf.csrf import CsrfProtect
-from werkzeug.contrib.cache import SimpleCache
 import logging
 import subprocess
 import traceback
@@ -19,8 +17,6 @@ Message:
 
 csrf = CsrfProtect()
 
-cache = Cache(config={'CACHE_TYPE': 'simple'})
-
 def create_app(environment):
     app = Flask(__name__)
     app.config.from_pyfile("config/{}.py".format(environment))
@@ -32,8 +28,6 @@ def create_app(environment):
     app.register_blueprint(twitter)
 
     csrf.init_app(app)
-
-    cache.init_app(app)
     
     @app.context_processor
     def inject_config():

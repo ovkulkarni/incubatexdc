@@ -1,10 +1,8 @@
 from flask import Blueprint, render_template, current_app, flash, url_for, request, session, flash, redirect
 from twitter_utils import analyze_tweets, get_tweets
-from app import cache
 
 twitter = Blueprint("twitter", __name__, template_folder="templates", url_prefix="/twitter")
 
-@cache.cached(timeout=300)
 @twitter.route("/results/<user>/")
 def show_results(user):
 	tweets = get_tweets(user)
