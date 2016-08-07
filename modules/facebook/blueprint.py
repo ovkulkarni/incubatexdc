@@ -27,6 +27,7 @@ def process_code():
 			session["token"] = args["access_token"]
 			return(redirect(url_for('.process_code')))
 	else:
+		flash("Successfully Authenticated.")
 		return redirect(url_for('home_page'))
 
 @cache.cached(timeout=300)

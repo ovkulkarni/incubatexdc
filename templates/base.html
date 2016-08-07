@@ -109,6 +109,11 @@
 				});
 			});
 		</script>
+		<script id="toasts" type="text/javascript">
+            {% for message in get_flashed_messages() %}
+                Materialize.toast({{ message | tojson }}, 4000);
+            {% endfor %}
+        </script>
 		<!-- end scripts -->
 	</body>
 </html>
