@@ -9,6 +9,12 @@ def show_results(user):
 	analysis = analyze_tweets(tweets)
 	return str(analysis)
 
+@twitter.route("/parse/", methods=["POST"])
+def parse_url():
+	url = request.form.get("twitter_url")
+	if url.endswith("/"): url = url[:-1]
+	username = url.split("/")[-1].split("?")[0]
+	return redirect(url_for('.show_results', user=username))
 		
 
 		
