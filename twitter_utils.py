@@ -19,5 +19,8 @@ def get_tweets(user="pokevisiongo"):
 def analyze_tweets(tweets):
 	analysis = {}
 	for tweet in tweets:
-		analysis[tweet.id] = analyze(tweet.text)
+		try:
+			analysis[tweet.id] = analyze(tweet.text)
+		except:
+			analysis[tweet.id] = "none"
 	return analysis

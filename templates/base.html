@@ -34,45 +34,25 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
 			</div>
 		</nav>
+        <div id="all-content">
+    		<div id="index-banner" class="parallax-container">
+    			<div class="section no-pad-bot">
+    				<div class="container">
+    					<br><br>
+    					<div id="image-box">
+    						{% block header_content %}
+    						{% endblock %}
+    					</div>
+    				</div>
+    			</div>
+    			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
+    		</div>
 
-		<div id="index-banner" class="parallax-container">
-			<div class="section no-pad-bot">
-				<div class="container">
-					<br><br>
-					<div id="image-box">
-						{% block header_content %}
-						{% endblock %}
-					</div>
-				</div>
-			</div>
-			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
-		</div>
-
-		<div class="container">
-			{% block content %}
-			{% endblock %}
-		</div>
-
-		<!-- Non-working footer 
-		<footer class="page-footer headfoot">
-			<div class="container">
-				<div class="row">
-					<div class="col s3">
-						<a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-lg"></i>&nbsp;&nbsp;Follow on Google+</a>
-					</div>
-					<div class="col s3">
-						<a href="tel:1-571-354-0586" target="_blank"><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;(571) 354 0586</a>
-					</div>
-					<div class="col s3">
-						<a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Follow on Facebook</a>
-					</div>
-					<div class="col s3">
-						<a href="mailto:temp@webmakeover.com" target="_blank"><i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;temp@<wbr>web<wbr>makeover<wbr>.com</a>
-					</div>
-				</div>
-			</div>
-		</footer>
-		-->
+    		<div class="container">
+    			{% block content %}
+    			{% endblock %}
+    		</div>
+        </div>
 
 		<!-- scripts -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

@@ -7,7 +7,10 @@ twitter = Blueprint("twitter", __name__, template_folder="templates", url_prefix
 def show_results(user):
 	tweets = get_tweets(user)
 	analysis = analyze_tweets(tweets)
-	return str(analysis)
+	all_good = True
+	if any(x in analysis.values() for x in ["bad", "warning"]):
+		all_good=False
+	return render_template('twitter/results.html', posts=analysis, all_good=all_good)
 
 @twitter.route("/parse/", methods=["POST"])
 def parse_url():

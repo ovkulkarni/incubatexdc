@@ -32,7 +32,10 @@ def show_results(user):
 	try:
 		posts = get_posts(user)
 		analysis = analyze_posts(posts)
-		return str(analysis)
+		all_good = True
+		if any(x in analysis.values() for x in ["bad", "warning"]):
+			all_good=False
+		return render_template("facebook/results.html", posts=analysis, all_good=all_good)
 	except facebook.GraphAPIError:
 		return redirect(url_for('.process_code'))
 
