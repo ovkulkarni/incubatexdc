@@ -29,6 +29,7 @@
 		<nav class="light-blue darken-2 z-depth-3" role="navigation">
 		    <div class="nav-wrapper container">
 				<a id="logo-container" href="{{ url_for('home_page') }}" class="brand-logo">{{ global_config.APP_NAME }}</a>
+				<a id="logo-container" href="#test" class="brand-logo">test</a>
 				<ul id="nav-mobile" class="side-nav">
 				</ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
@@ -47,13 +48,15 @@
     			</div>
     			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
     		</div>
-
     		<div class="container">
     			{% block content %}
     			{% endblock %}
     		</div>
         </div>
-
+		<div id="footer">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	
 		<!-- scripts -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -68,6 +71,22 @@
 					$('.parallax').parallax();
 				}); 
 			})(jQuery);
+		</script>
+		<script>
+			$(function() {
+				$('a[href*="#"]:not([href="#"])').click(function() {
+					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+						var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+							$('html, body').animate({
+								scrollTop: target.offset().top
+							}, 1000);
+							return false;
+			  			}
+					}
+				});
+			});
 		</script>
 		<!-- end scripts -->
 	</body>
