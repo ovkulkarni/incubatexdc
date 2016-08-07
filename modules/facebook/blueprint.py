@@ -2,7 +2,9 @@ from flask import Blueprint, render_template, current_app, flash, url_for, reque
 from facebook_utils import get_posts, analyze_posts
 from requests import get
 from urllib import quote
+from app import cache
 import facebook
+
 
 fb = Blueprint("fb", __name__, template_folder="templates", url_prefix="/facebook")
 
@@ -27,6 +29,7 @@ def process_code():
 	else:
 		return redirect(url_for('.show_results', user="me"))
 
+@cache.cached(timeout=300)
 @fb.route("/results/<user>/")
 def show_results(user):
 	try:

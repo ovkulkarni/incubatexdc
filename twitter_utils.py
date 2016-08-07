@@ -30,7 +30,7 @@ def analyze_tweets(tweets):
 			for file in media_files:
 				filename = wget.download(file["media_url"])
 				if is_nude(str(filename)):
-					analysis[tweet.id] = "bad"
+					analysis[tweet.id] = "bad image"
 					break
 			os.system('rm *.jpg')
 	return analysis

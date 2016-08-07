@@ -1,14 +1,16 @@
 from flask import Blueprint, render_template, current_app, flash, url_for, request, session, flash, redirect
 from twitter_utils import analyze_tweets, get_tweets
+from app import cache
 
 twitter = Blueprint("twitter", __name__, template_folder="templates", url_prefix="/twitter")
 
+@cache.cached(timeout=300)
 @twitter.route("/results/<user>/")
 def show_results(user):
 	tweets = get_tweets(user)
 	analysis = analyze_tweets(tweets)
 	all_good = True
-	if any(x in analysis.values() for x in ["bad", "warning"]):
+	if any(x in analysis.values() for x in ["bad", "warning", "bad image"]):
 		all_good=False
 	return render_template('twitter/results.html', posts=analysis, all_good=all_good)
 
