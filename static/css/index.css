@@ -1,19 +1,16 @@
 /* --- content styles --- */
 h4 {
+	margin-top: 40px;
 	text-align: center;
 }
 
-#main-content {
-	max-width: 1000px;
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+hr {
+	margin-top: 60px;
+	margin-bottom: 40px;
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #26547c;
 }
 
 .button-primary {
@@ -21,10 +18,5 @@ h4 {
     border-radius: 4px;
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.clear-text-effect {
-    text-transform: none;
-	color: inherit;
 }
 /* --- end content styles --- */

@@ -7,7 +7,7 @@
  *	orange: #f39237
  */
 
-/* --- misc styles --- */
+/* --- tag styles --- */
 * {
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
@@ -27,19 +27,24 @@ main {
 a {
     text-decoration: none;
 }
-
-hr {
-	margin-top: 60px;
-	margin-bottom: 80px;
-	display: block;
-    height: 1px;
-    border: 0;
-    border-top: 2px solid #26547c;
-}
-/* --- end misc styles --- */
+/* --- end tag styles --- */
 
 /* --- header/footer styles --- */
 .headfoot {
 	background-color: #0e79b2 !important;
 }
 /* --- end header/footer styles --- */
+
+/* --- content styles --- */
+#main-content {
+	max-width: 1000px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear-text-effect {
+    text-transform: none;
+	color: inherit;
+}
+/* --- end content styles --- */
