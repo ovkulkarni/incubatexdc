@@ -1,6 +1,8 @@
 import tweepy
 import os
+import wget
 from textutils import analyze
+from nude import is_nude
 
 #Variables that contains the user credentials to access Twitter API 
 access_token = os.getenv("TWITTER_ACCESS_TOKEN", "")
@@ -21,6 +23,14 @@ def analyze_tweets(tweets):
 	for tweet in tweets:
 		try:
 			analysis[tweet.id] = analyze(tweet.text)
+
 		except:
+			media_files = tweet.entities.get("media", [])
 			analysis[tweet.id] = "none"
+			for file in media_files:
+				filename = wget.download(file["media_url"])
+				if is_nude(str(filename)):
+					analysis[tweet.id] = "bad"
+					break
+			os.system('rm *.jpg')
 	return analysis
