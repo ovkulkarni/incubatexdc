@@ -27,7 +27,7 @@ def process_code():
 			return(redirect(url_for('.process_code')))
 	else:
 		flash("Successfully Authenticated.")
-		return redirect(url_for('home_page'))
+		return redirect(url_for('.show_results', user='me'))
 
 @fb.route("/results/<user>/")
 def show_results(user):
