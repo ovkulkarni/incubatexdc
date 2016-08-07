@@ -13,7 +13,7 @@
 			<div class="card {% if attr == 'warning' %}yellow lighten-1{% elif attr in ['bad', 'bad image'] %}red{% endif %}">
 				<div class="card-content">
 					<span class="card-title">{{ attr.split()[0] | title }}</span>{% if attr == 'bad image' %}<span class="new badge" data-badge-caption="">Image</span>{% endif %}
-					<p><a href="//twitter.com/anyuser/status/{{ id }}">Link To Post</a></p>
+					<p><a href="//twitter.com/anyuser/status/{{ id }}" target="_blank" rel="noopener noreferrer">Link To Post</a></p>
 					<p>This content may be unsuitable for displaying on your profile. Please consider removing this post.</p>
 				</div>
 			</div>

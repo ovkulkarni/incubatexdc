@@ -1,7 +1,7 @@
 {% set extra_css = extra_css | default(False) %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:svg="http://www.w3.org/2000/svg">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -12,7 +12,14 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel='stylesheet' />
 
-		<link href="/static/favicon.ico" rel='shortcut' />
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/icon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/static/icon/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/static/icon/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/static/icon/manifest.json">
+		<link rel="mask-icon" href="/static/icon/safari-pinned-tab.svg" color="#0288d1">
+		<link rel="shortcut icon" href="/static/icon/favicon.ico">
+		<meta name="msapplication-config" content="/static/icon/browserconfig.xml">
+		<meta name="theme-color" content="#0288d1">
 
 		{% if extra_css %}
 			{% if extra_css is string %}
@@ -25,55 +32,46 @@
 		{% endif %}
 	</head>
 	<body>
-		<div class="navbar-fixed">
-			<nav>
-				<div class="nav-wrapper light-blue darken-2 z-depth-2">
-					<div id="header-margin">
-						<a href="{{ url_for('home_page') }}" class="brand-logo"><img id="logo-image" src="{{ url_for('static', filename='img/logo.png') }}" /><!-- cause logo is ugly {{ global_config.APP_NAME }} --></a>
-						<ul class="right hide-on-med-and-down">
-							<li><a href="#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
-							<li><a href="#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
-							<li><a href="#tw"><i class="material-icons fa fa-twitter fa-2x"></i></a></li>
-						</ul>
-					</div>
+		<header>
+			<nav class="navbar-fixed light-blue darken-2 z-depth-2" role="navigation">
+				<div class="nav-wrapper container">
+					<a href="{{ url_for('home_page') }}" class="brand-logo">
+						&nbsp;
+						<img id="logo-image" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" />
+						&nbsp;
+					</a>
+					<ul class="right hide-on-small-and-down">
+						<li><a href="/#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
+						<li><a href="/#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
+						<li><a href="/#tw"><i class="material-icons fa fa-twitter fa-2x"></i></a></li>
+					</ul>
 				</div>
 			</nav>
-		</div>
-        <div id="all-content">
-    		<div id="index-banner" class="parallax-container">
-    			<div class="section no-pad-bot">
-    				<div class="container">
-    					<br><br>
-    					<div id="image-box">
-    						{% block header_content %}
-    						{% endblock %}
-    					</div>
-    				</div>
-    			</div>
-    			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
-    		</div>
-    		<div class="container">
-    			{% block content %}
-    			{% endblock %}
-    		</div>
-			<div id="index-banner" class="parallax-container">
-    			<div class="section no-pad-bot">
-    				<div class="container">
-    					<br><br>
-    					<div id="image-box">
-    						{% block footer_content %}
-    						{% endblock %}
-    					</div>
-    				</div>
-    			</div>
-    			<div class="parallax"><img src="{{ url_for('static', filename='img/tiles.png') }}" alt="image-box"></div>
-    		</div>
-        </div>
-
+		</header>
+		<main>
+	        <div id="all-content">
+	    		<div id="index-banner" class="parallax-container">
+	    			<div class="section no-pad-bot">
+	    				<div class="container">
+	    					<br><br>
+	    					<div id="image-box">
+	    						{% block header_content %}
+	    						{% endblock %}
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
+	    		</div>
+	    		<div class="container">
+	    			{% block content %}
+	    			{% endblock %}
+	    		</div>
+	        </div>
+	    </main>
 		<footer class="page-footer light-blue darken-2 z-depth-2">
-			<div class="footer-copyright">
-				<div class="container">
-					© 2014 Copyright Text
+			<div class="footer-copyright light-blue darken-2">
+				<div class="copyright container">
+					&copy; 2016 Matthew Chen, <a href="//okulkarni.me" target="_blank" rel="noopener noreferrer" class="white-text">Omkar Kulkarni</a>, Rachel Naidich, and <a href="//evanshi.me" target="_blank" rel="noopener noreferrer" class="white-text">Evan Shi</a>
 				</div>
 			</div>
         </footer>

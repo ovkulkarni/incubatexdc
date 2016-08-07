@@ -60,6 +60,10 @@ def create_app(environment):
     def home_page():
         return render_template("index.html")
 
+    @app.route("/favicon.ico")
+    def favicon():
+        return app.send_static_file("icon/favicon.ico")
+
     return app
 
 if __name__ == '__main__':

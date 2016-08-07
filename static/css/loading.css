@@ -53,13 +53,3 @@
 		transform: rotate(360deg);
 	}
 }
-
-p{
-	color: #ffffff;
-}
-
-.textPrompt{
-	color: #ffffff;
-	font-family: Roboto;
-	position: relative;
-}
