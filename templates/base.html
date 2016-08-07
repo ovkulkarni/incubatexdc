@@ -10,7 +10,6 @@
 		<link href="{{ url_for('static', filename='css/base.css') }}" rel='stylesheet' type='text/css' />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
-
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel='stylesheet' />
 
 		<link href="/static/favicon.ico" rel='shortcut' />
@@ -26,15 +25,20 @@
 		{% endif %}
 	</head>
 	<body>
-		<nav class="light-blue darken-2 z-depth-3" role="navigation">
-		    <div class="nav-wrapper container">
-				<a id="logo-container" href="{{ url_for('home_page') }}" class="brand-logo">{{ global_config.APP_NAME }}</a>
-				<a id="logo-container" href="#test" class="brand-logo">test</a>
-				<ul id="nav-mobile" class="side-nav">
-				</ul>
-				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
-			</div>
-		</nav>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper light-blue darken-2 z-depth-2">
+					<div id="header-margin">
+						<a href="{{ url_for('home_page') }}" class="brand-logo">{{ global_config.APP_NAME }}</a>
+						<ul class="right hide-on-med-and-down">
+							<li><a href="#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
+							<li><a href="#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
+							<li><a href="#tw"><i class="material-icons fa fa-twitter fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
         <div id="all-content">
     		<div id="index-banner" class="parallax-container">
     			<div class="section no-pad-bot">
@@ -54,6 +58,7 @@
     		</div>
         </div>
 		<div id="footer">
+		<!--OMKAR DO DUH FOOTER -->
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div>
 	
@@ -80,7 +85,7 @@
 						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 						if (target.length) {
 							$('html, body').animate({
-								scrollTop: target.offset().top
+								scrollTop: target.offset().top - 75
 							}, 1000);
 							return false;
 			  			}
