@@ -13,12 +13,12 @@ def process_code():
 		if not request.args.get("code", None):
 			return redirect("https://www.facebook.com/dialog/oauth?client_id={}&redirect_uri={}&response_type=code".format(
 				current_app.config["FB_APP_ID"],
-				quote("http://localhost:5000/facebook/login/")))
+				quote(url_for('.process_code', _external=True))))
 		else:
 			t = request.args.get("code", "")
 			r = get("https://graph.facebook.com/oauth/access_token?client_id={}&client_secret={}&code={}&redirect_uri={}".format(
 				current_app.config["FB_APP_ID"], current_app.config["FB_APP_SECRET"], t,
-				quote("http://localhost:5000/facebook/login/")))
+				quote(url_for('.process_code', _external=True))))
 			arglist= r.text.split("&")
 			args = {}
 			for arg in arglist:
