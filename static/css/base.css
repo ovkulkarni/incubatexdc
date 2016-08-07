@@ -43,7 +43,7 @@ a {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 110px;
+    margin-top: 60px;
     margin-bottom: 150px;
     font-weight: bold;
     color: white;
@@ -82,5 +82,9 @@ a {
 
 .section {
     margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80% !important;
+	max-width: 1200px !important;
 }
 /* --- end content styles --- */

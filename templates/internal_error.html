@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
+{% block header_content %}
+<h1>Internal Server Error</h1>
+{% endblock %}
+
 {% block content %}
 <div class="row center">
-    <h1>Internal Server Error</h1>
     <pre>{{ trace }}</pre>
 </div>
 {% endblock %}
