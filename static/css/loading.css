@@ -1,6 +1,6 @@
 #loading {
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 	border: 2px solid #000000;
 	border-top-color: #f39237;
 	border-radius: 100%;
@@ -14,8 +14,8 @@
 }
 
 #loading2 {
-	width: 100px;
-	height: 100px;
+	width: 140px;
+	height: 140px;
 	border: 2px solid #000000;
 	border-top-color: #f39237;
 	border-radius: 100%;
@@ -29,8 +29,8 @@
 }
 
 #loading3 {
-	width: 120px;
-	height: 120px;
+	width: 160px;
+	height: 160px;
 	border: 2px solid #000000;
 	border-top-color: #f39237;
 	border-radius: 100%;
@@ -49,4 +49,19 @@
 	} to {
 		transform: rotate(360deg);
 	}
+}
+
+@media screen and (max-width: 1400px) {
+    #loading1 {
+		width: 80px;
+		height: 80px;
+    }
+	#loading2 {
+		width: 100px;
+		height: 100px;
+    }
+	#loading3 {
+		width: 120px;
+		height: 120px;
+    }
 }
