@@ -27,8 +27,9 @@ a {
 /* --- end tag styles --- */
 
 /* --- header/footer styles --- */
-.headfoot {
-	background-color: #0e79b2 !important;
+#header-margin {
+	margin-left: 40px;
+	margin-right: 40px;
 }
 /* --- end header/footer styles --- */
 
