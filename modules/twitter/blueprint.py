@@ -6,7 +6,7 @@ twitter = Blueprint("twitter", __name__, template_folder="templates", url_prefix
 @twitter.route("/results/<user>/")
 def show_results(user):
 	tweets = get_tweets(user)
-	analysis = analyze_tweets(tweets)
+	analysis = analyze_tweets(tweets, current_app.config["CHECK_IMAGES"])
 	all_good = True
 	if any(x in analysis.values() for x in ["bad", "warning", "bad image"]):
 		all_good=False
