@@ -33,20 +33,22 @@
 	</head>
 	<body>
 		<header>
-			<nav class="navbar-fixed light-blue darken-2 z-depth-2" role="navigation">
-				<div class="nav-wrapper container">
-					<a href="{{ url_for('home_page') }}" class="brand-logo">
-						&nbsp;
-						<img id="logo-image" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" />
-						&nbsp;
-					</a>
-					<ul class="right hide-on-small-and-down">
-						<li><a href="/#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
-						<li><a href="/#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
-						<li><a href="/#tw"><i class="material-icons fa fa-twitter fa-2x"></i></a></li>
-					</ul>
-				</div>
-			</nav>
+			<div class="navbar-fixed">
+				<nav class="light-blue darken-2 z-depth-2" role="navigation">
+					<div class="nav-wrapper container">
+						<a href="{{ url_for('home_page') }}" class="brand-logo">
+							&nbsp;
+							<img id="logo-image" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" />
+							&nbsp;
+						</a>
+						<ul class="right hide-on-small-and-down">
+							<li><a href="/#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
+							<li><a href="/#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
+							<li><a href="/#tw"><i class="material-icons fa fa-twitter fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
 		</header>
 		<main>
 	        <div id="all-content">

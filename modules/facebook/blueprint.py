@@ -27,7 +27,7 @@ def process_code():
 			session["token"] = args["access_token"]
 			return(redirect(url_for('.process_code')))
 	else:
-		return redirect(url_for('.show_results', user="me"))
+		return redirect(url_for('home_page'))
 
 @cache.cached(timeout=300)
 @fb.route("/results/<user>/")
