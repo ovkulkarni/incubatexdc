@@ -1,11 +1,12 @@
 {% set extra_css = "index" %}
 {% extends "base.html" %}
 
-{% block content %}
+{% block header_content %}
 <div id="image-box">
 	<h1>Web Makeover</h1>
 </div>
-
+{% endblock %}
+{% block content %}
 <div class="container">
 	<div id="main-content">
 		<p class="center">
@@ -56,6 +57,7 @@
 			</form>
 		</div>
 		<!-- end Twitter -->
+
 	</div>
 </div>
 {% endblock %}

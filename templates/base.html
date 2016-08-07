@@ -2,38 +2,70 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Web Makeover</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="/static/css/base.css" rel='stylesheet' type='text/css' />
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>{{ global_config.APP_NAME }}</title>
 
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel='stylesheet' />
-		
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
 
-        <link href="/static/favicon.ico" rel='shortcut' />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel='stylesheet' />
 
-		{% if extra_css %}
-        	{% if extra_css is string %}
-        		<link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
-        	{% elif extra_css is iterable %}
-        		{% for file in extra_css %}
-        			<link href="/static/css/{{ file }}.css" rel='stylesheet' type='text/css' />
-        		{% endfor %}
-        	{% endif %}
-        {% endif %}
-    </head>
-    <body>
-		<nav>
-			<div class="nav-wrapper headfoot">
-				<a href="#" class="brand-logo center">Logo Here (assigned to evanyeyeye)</a>
-			</div>
-		</nav>
+    <link href="/static/favicon.ico" rel='shortcut' />
 
-        <div class="content">
-            {% block content %}
+    {% if extra_css %}
+    {% if extra_css is string %}
+    <link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
+    {% elif extra_css is iterable %}
+    {% for file in extra_css %}
+    <link href="/static/css/{{ file }}.css" rel='stylesheet' type='text/css' />
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+</head>
+<body>
+    <nav class="indigo darken-3" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="{{ url_for('home_page') }}" class="brand-logo">{{ global_config.APP_NAME }}</a>
+
+          <ul id="nav-mobile" class="side-nav">
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <div class="row center">
+            {% block header_content %}
             {% endblock %}
-        </div>
+      </div>
+
+  </div>
+</div>
+<div class="parallax"><img src="{{ url_for('static', filename='img/bg.png') }}" alt="Background"></div>
+</div>
+			<!--
+            <div id="flash-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flashed-message message-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        -->
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
 
 		<!-- Non-working footer 
         <footer class="page-footer headfoot">
@@ -54,12 +86,22 @@
 				</div>
 			</div>
 		</footer>
-		-->
+  -->
 
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-        {% block scripts %}
-        {% endblock %}
-    </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  {% block scripts %}
+  {% endblock %}
+  <script>
+      (function($){
+          $(function(){
+
+            $('.button-collapse').sideNav();
+            $('.parallax').parallax();
+
+  }); // end of document ready
+      })(jQuery);
+  </script>
+</body>
 </html>
 

@@ -1,4 +1,3 @@
-from database import database
 from flask import Flask, render_template, flash, redirect, make_response, request, session
 from flask_wtf.csrf import CsrfProtect
 import logging
@@ -22,8 +21,6 @@ csrf = CsrfProtect()
 def create_app(environment):
     app = Flask(__name__)
     app.config.from_pyfile("config/{}.py".format(environment))
-
-    database.init(app.config["DB_PATH"])
 
     from modules.facebook.blueprint import fb
     from modules.twitter.blueprint import twitter

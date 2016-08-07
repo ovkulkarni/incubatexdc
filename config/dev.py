@@ -2,7 +2,6 @@ import os
 
 APP_NAME = "Web Makeover"
 SECRET_KEY = "key"
-DB_PATH = "database.db"
 ENVIRONMENT = "dev"
 DISPLAY_DEBUG_INFO = "False"
 TEMPLATES_AUTO_RELOAD = True
