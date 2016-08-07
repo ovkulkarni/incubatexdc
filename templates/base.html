@@ -64,10 +64,12 @@
 	    			</div>
 	    			<div class="parallax"><img src="{{ url_for('static', filename='img/background.jpg') }}" alt="image-box"></div>
 	    		</div>
-	    		<div class="container">
-	    			{% block content %}
-	    			{% endblock %}
-	    		</div>
+				<div id="body-content">
+					<div class="container">
+						{% block content %}
+						{% endblock %}
+					</div>
+				</div>
 	        </div>
 	    </main>
 		<footer class="page-footer light-blue darken-2 z-depth-2">
