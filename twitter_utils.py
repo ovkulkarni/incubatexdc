@@ -33,13 +33,12 @@ def analyze_tweets(tweets, pictures=False):
 				os.system('rm *.jpg *.png')
 		except:
 			analysis[tweet.id] = "none"
-			if pictures:
-				media_files = tweet.entities.get("media", [])
-				for file in media_files:
-					filename = wget.download(file["media_url"])
-					if is_nude(str(filename)):
-						analysis[tweet.id] = "bad image"
-						break
+			media_files = tweet.entities.get("media", [])
+			for file in media_files:
+				filename = wget.download(file["media_url"])
+				if is_nude(str(filename)):
+					analysis[tweet.id] = "bad image"
+					break
 				os.system('rm *.jpg')
 
 	return analysis
