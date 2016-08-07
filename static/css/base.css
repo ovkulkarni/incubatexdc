@@ -9,7 +9,7 @@
 
 /* --- tag styles --- */
 body {
-	background-image: url("../sayagata-400px.png");
+	background-image: url("../img/texture.png");
     background-color: #eff2ef;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,11 @@ a {
 #header-margin {
 	margin-left: 40px;
 	margin-right: 40px;
+}
+
+#logo-image {
+	margin-top: 10px;
+	height: 40px;
 }
 /* --- end header/footer styles --- */
 

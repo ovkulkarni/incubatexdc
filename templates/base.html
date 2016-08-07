@@ -29,7 +29,7 @@
 			<nav>
 				<div class="nav-wrapper light-blue darken-2 z-depth-2">
 					<div id="header-margin">
-						<a href="{{ url_for('home_page') }}" class="brand-logo">{{ global_config.APP_NAME }}</a>
+						<a href="{{ url_for('home_page') }}" class="brand-logo"><img id="logo-image" src="{{ url_for('static', filename='img/logo.png') }}" /><!-- cause logo is ugly {{ global_config.APP_NAME }} --></a>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="#about"><i class="material-icons fa fa-question-circle-o fa-2x"></i></a></li>
 							<li><a href="#fb"><i class="material-icons fa fa-facebook fa-2x"></i></a></li>
@@ -56,11 +56,27 @@
     			{% block content %}
     			{% endblock %}
     		</div>
+			<div id="index-banner" class="parallax-container">
+    			<div class="section no-pad-bot">
+    				<div class="container">
+    					<br><br>
+    					<div id="image-box">
+    						{% block footer_content %}
+    						{% endblock %}
+    					</div>
+    				</div>
+    			</div>
+    			<div class="parallax"><img src="{{ url_for('static', filename='img/tiles.png') }}" alt="image-box"></div>
+    		</div>
         </div>
-		<div id="footer">
-		<!--OMKAR DO DUH FOOTER -->
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		</div>
+
+		<footer class="page-footer light-blue darken-2 z-depth-2">
+			<div class="footer-copyright">
+				<div class="container">
+					© 2014 Copyright Text
+				</div>
+			</div>
+        </footer>
 	
 		<!-- scripts -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
