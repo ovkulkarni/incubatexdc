@@ -9,7 +9,7 @@
 <div class="section">
 	<div id="about" class="row">
         <div class="col s12">
-			<div class="card light-blue darken-2 z-depth-1">
+			<div id="first-fade" class="card light-blue darken-2 z-depth-1 fade-in">
 				<div id="card-design" class="card-content white-text">
   					<span class="card-title">Applying for a school, internship or job?</span> 
 					<p>Worried about your past actions on social media? Web Makeover is a free and easy to use tool that scans all your favorite social media platforms and warns you about content that may impede your application. All you need to do is provide your account link; Web Makeover handles the rest.</p>
@@ -21,7 +21,7 @@
 	<hr>
 
 	<!-- Facebook -->
-	<div id="social-margin" class="row">
+	<div id="second-fade" class="row social-margin fade-in">
 		<div class="col s6">
 			<a href="{{ url_for('fb.show_results', user='me') }}" id="my_results">
 				<div id="fb" class="card light-blue z-depth-1">
@@ -50,7 +50,7 @@
 	<!-- end Facebook -->
 
 	<!-- Twitter -->
-	<div id="social-margin" class="row">
+	<div id="third-fade" class="row social-margin fade-in">
 		<div class="col s6">
 			<form class="col s12" method="POST" action="{{ url_for('twitter.parse_url') }}">
 				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
@@ -78,11 +78,30 @@
 </div>
 {% endblock %}
 
-{% block footer_content %}
-<h4>Here goes monetization info.</h4>
-{% endblock %}
-
 {% block scripts %}
+<script>
+var options = [
+	{selector: '#first-fade', offset: 100, callback: function(el) {
+		console.log("Scrollfire");
+		$(el).hide();
+		$(el).removeClass("fade-in");
+		$(el).fadeIn("slow");
+	}},
+	{selector: '#second-fade', offset: 100, callback: function(el) {
+		console.log("Scrollfire");
+		$(el).hide();
+		$(el).removeClass("fade-in");
+		$(el).fadeIn("slow");
+	}},
+	{selector: '#third-fade', offset: 100, callback: function(el) {
+		console.log("Scrollfire");
+		$(el).hide();
+		$(el).removeClass("fade-in");
+		$(el).fadeIn("slow");
+	}}
+];
+Materialize.scrollFire(options);
+</script>
 <script type="text/javascript">
 	$("form").submit(function() {
 		$('#all-content').html(`{% include "loading.html" %}`)
